@@ -150,3 +150,73 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+.hog-container {
+  justify-content: center;
+}
+
+.hog-image {
+  height: 250px!important;
+    object-fit: cover;
+}
+
+.ui.card:first-child, .ui.card:last-child, .ui.card {
+  margin: 1em 1em;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0 0 0 / 80%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+  max-width: 500px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.modal-image {
+  width: 100%;
+}
+
+.modal-details {
+  background: white;
+  padding: 15px;
+}
+
+.hide {
+  display: none;
+}
+
+.close-modal {
+  color: white;
+  position: absolute;
+  top: -25px;
+  right: -20px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.sort-filter-bar {
+  justify-content: center;
+}
+
+.sort-filter-bar label {
+  display: flex;
+  flex-direction: column;
+}
