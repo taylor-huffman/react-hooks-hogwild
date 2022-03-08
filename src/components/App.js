@@ -22,7 +22,6 @@ function App() {
 	const [modalVisible, setModalVisible] = useState(false)
 	const [filter, setFilter] = useState('All')
 	const [sort, setSort] = useState('Sorting Off')
-	// const [showHogs, setShowHogs] = useState(hogs)
 
 
 
@@ -57,7 +56,7 @@ function App() {
 		} return hogs.greased === false
 	}).sort((a,b) => {
 		if (sort === 'Sorting Off') return true
-		else if (sort === 'name') {
+		else if (sort === 'name a-z') {
 			const nameA = a.name.toUpperCase(); // ignore upper and lowercase
 			const nameB = b.name.toUpperCase(); // ignore upper and lowercase
 			if (nameA < nameB) {
@@ -69,8 +68,22 @@ function App() {
 
 			// names must be equal
 			return 0;
-		} else {
+		} else if (sort === 'name z-a') {
+			const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+			const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+			if (nameB < nameA) {
+				return -1;
+			}
+			if (nameB > nameA) {
+				return 1;
+			}
+
+			// names must be equal
+			return 0;
+		} else if (sort === 'weight low to high') {
 			return a.weight - b.weight;
+		} else {
+			return b.weight - a.weight
 		}
 	})
 

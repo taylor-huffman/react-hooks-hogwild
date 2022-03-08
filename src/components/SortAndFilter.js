@@ -18,8 +18,10 @@ function SortAndFilter({ handleFilter, handleSort }) {
                     Sort
                     <select onChange={handleSort}>
                         <option value="Sorting Off">Sorting Off</option>
-                        <option value="name">Name: A-Z</option>
-                        <option value="weight">Weight: Low To High</option>
+                        <option value="name a-z">Name: A-Z</option>
+                        <option value="name z-a">Name: Z-A</option>
+                        <option value="weight low to high">Weight: Low To High</option>
+                        <option value="weight high to low">Weight: High To Low</option>
                     </select>
                 </label>
             </div>
