@@ -162,6 +162,12 @@ ul {
 
 .ui.card:first-child, .ui.card:last-child, .ui.card {
   margin: 1em 1em;
+  position: relative;
+  background-color: #f5a9bc8e;
+}
+
+.ui.card .content {
+  background-color: white!important
 }
 
 .pointer {
@@ -200,7 +206,7 @@ ul {
 }
 
 .hide {
-  display: none;
+  display: none!important;
 }
 
 .close-modal {
@@ -219,4 +225,8 @@ ul {
 .sort-filter-bar label {
   display: flex;
   flex-direction: column;
+}
+
+.hide-hog {
+  margin: 10px 0!important;
 }

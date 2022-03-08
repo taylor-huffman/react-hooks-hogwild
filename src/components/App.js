@@ -17,7 +17,7 @@ const initialHog = [{
   }]
 
 function App() {
-
+	
 	const [hogDetails, setHogDetails] = useState(initialHog)
 	const [modalVisible, setModalVisible] = useState(false)
 	const [filter, setFilter] = useState('All')

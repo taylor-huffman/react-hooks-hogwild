@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 function HogCard({ name, image, handleShowDetails }) {
+
+    const [isHidden, setIsHidden] = useState(false)
+
+    function handleHide() {
+        setIsHidden(isHidden => !isHidden)
+        console.log('hide')
+    }
+
     return (
-        // <div className="hog-card pigTile minPigTile" style={{ backgroundImage: `url(${image})` }} onClick={handleShowDetails}>
-        //     <h3 className="hoggyText">{name}</h3>
-        // </div>
         <div className="ui card">
-            <div className="image">
+            <p className="hide-hog" onClick={handleHide}>{isHidden ? `Show ${name}` : `Hide ${name}`}</p>
+            <div className={isHidden ? 'image hide' : 'image'}>
                 <img src={image} className="hog-image" alt={name + " image"}></img>
             </div>
-            <div className="content">
+            <div className={isHidden ? 'content hide' : 'content'}>
                 <h3 className="header pointer" onClick={(e) => handleShowDetails(e.target.textContent)}>{name}</h3>
             </div>
         </div>
