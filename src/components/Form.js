@@ -8,7 +8,7 @@ function Form({ handleAddHog }) {
         weight: '',
         specialty: '',
         'highest medal achieved': '',
-        greased: '',
+        greased: true,
     })
     // const [image, setImage] = useState('')
     // const [weight, setWeight] = useState('')
@@ -26,7 +26,7 @@ function Form({ handleAddHog }) {
     }
 
     function handleWeight(event) {
-        setFormData({...formData, weight: event.target.value})
+        setFormData({...formData, weight: parseFloat(event.target.value)})
     }
 
     function handleSpecialty(event) {
@@ -38,7 +38,7 @@ function Form({ handleAddHog }) {
     }
 
     function handleGreased(event) {
-        setFormData({...formData, greased: event.target.value})
+        setFormData({...formData, greased: event.target.value === 'true' ? true : false})
     }
     
     function handleSubmit(event) {
@@ -50,7 +50,7 @@ function Form({ handleAddHog }) {
             weight: '',
             specialty: '',
             'highest medal achieved': '',
-            greased: '',
+            greased: true,
         })
     }
 

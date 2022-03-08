@@ -51,10 +51,13 @@ function App() {
 	}
 
 	function handleAddHog(newHog) {
+		// console.log(newHog)
+		// console.log(hogs)
+		// console.log([...showHogs, newHog])
 		setShowHogs([...showHogs, newHog])
 	}
 
-	console.log('in app', showHogs)
+	// console.log('in app', showHogs)
 	
 
 

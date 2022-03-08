@@ -6,7 +6,6 @@ function HogCard({ name, image, handleShowDetails }) {
 
     function handleHide() {
         setIsHidden(isHidden => !isHidden)
-        console.log('hide')
     }
 
     return (

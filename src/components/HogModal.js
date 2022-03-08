@@ -2,6 +2,7 @@ import React from "react";
 
 function HogModal({ hogDetails, modalVisible, handleCloseModal }) {
     const highestMedal = hogDetails[0]['highest medal achieved']
+    debugger
     return (
         <div className={modalVisible ? "modal" : "modal hide"}>
             <div className="modal-container">
