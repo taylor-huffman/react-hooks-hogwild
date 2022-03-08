@@ -21,8 +21,8 @@ function App() {
 	const [hogDetails, setHogDetails] = useState(initialHog)
 	const [modalVisible, setModalVisible] = useState(false)
 	const [filter, setFilter] = useState('All')
-	const [sort, setSort] = useState('All')
-	const [showHogs, setShowHogs] = useState(hogs)
+	const [sort, setSort] = useState('Sorting Off')
+	// const [showHogs, setShowHogs] = useState(hogs)
 
 
 
@@ -46,15 +46,32 @@ function App() {
 	}
 
 	function handleSort(event) {
-		console.log(event.target.value)
+		setSort(event.target.value)
 	}
 
 
-	const displayHogs = showHogs.filter(hogs => {
+	const displayHogs = hogs.filter(hogs => {
 		if (filter === 'All') return true
 		else if ( filter === 'true') {
 			return hogs.greased === true
 		} return hogs.greased === false
+	}).sort((a,b) => {
+		if (sort === 'Sorting Off') return true
+		else if (sort === 'name') {
+			const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+			const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+			if (nameA < nameB) {
+				return -1;
+			}
+			if (nameA > nameB) {
+				return 1;
+			}
+
+			// names must be equal
+			return 0;
+		} else {
+			return a.weight - b.weight;
+		}
 	})
 
 

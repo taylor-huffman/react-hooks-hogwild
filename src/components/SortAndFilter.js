@@ -17,7 +17,7 @@ function SortAndFilter({ handleFilter, handleSort }) {
                 <label>
                     Sort
                     <select onChange={handleSort}>
-                        <option value="All">All</option>
+                        <option value="Sorting Off">Sorting Off</option>
                         <option value="name">Name: A-Z</option>
                         <option value="weight">Weight: Low To High</option>
                     </select>
