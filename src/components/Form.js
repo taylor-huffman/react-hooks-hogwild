@@ -8,7 +8,7 @@ function Form({ handleAddHog }) {
         weight: '',
         specialty: '',
         'highest medal achieved': '',
-        greased: true,
+        greased: 'true',
     })
     // const [image, setImage] = useState('')
     // const [weight, setWeight] = useState('')
@@ -50,7 +50,7 @@ function Form({ handleAddHog }) {
             weight: '',
             specialty: '',
             'highest medal achieved': '',
-            greased: true,
+            greased: 'true',
         })
     }
 
@@ -65,8 +65,8 @@ function Form({ handleAddHog }) {
                     <input type='text' name="specialty" placeholder="Specialty" value={formData.specialty} onChange={handleSpecialty}></input>
                     <input type="text" name="highest medal achieved" placeholder="Highest Medal Achieved" value={formData['highest medal achieved']} onChange={handleMedal}></input>
                     <select name="greased" defaultValue={formData.greased} onChange={handleGreased}>
-                        <option value='true'>True</option>
-                        <option value='false'>False</option>
+                        <option value='true'>Greased</option>
+                        <option value='false'>Not Greased</option>
                     </select>
                     <input type="submit"></input>
                 </form>
