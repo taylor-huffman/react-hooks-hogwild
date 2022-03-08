@@ -229,4 +229,15 @@ ul {
 
 .hide-hog {
   margin: 10px 0!important;
+  cursor: pointer;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.form-container input, .form-container select {
+  width: 100%;
+  margin-bottom: 10px;
 }

@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import HogContainer from "./HogContainer"
 import HogModal from "./HogModal"
 import SortAndFilter from "./SortAndFilter";
+import Form from "./Form"
 
 import hogs from "../porkers_data";
 
@@ -22,13 +23,14 @@ function App() {
 	const [modalVisible, setModalVisible] = useState(false)
 	const [filter, setFilter] = useState('All')
 	const [sort, setSort] = useState('Sorting Off')
+	const [showHogs, setShowHogs] = useState(hogs)
 
 
 
 	function handleShowDetails(hogName) {
 		setModalVisible(modalVisible => !modalVisible)
 		setHogDetails(() => {
-			return hogs.filter(hog => {
+			return showHogs.filter(hog => {
 				return hog.name === hogName
 			})
 		})
@@ -48,8 +50,15 @@ function App() {
 		setSort(event.target.value)
 	}
 
+	function handleAddHog(newHog) {
+		setShowHogs([...showHogs, newHog])
+	}
 
-	const displayHogs = hogs.filter(hogs => {
+	console.log('in app', showHogs)
+	
+
+
+	const displayHogs = showHogs.filter(hogs => {
 		if (filter === 'All') return true
 		else if ( filter === 'true') {
 			return hogs.greased === true
@@ -92,6 +101,7 @@ function App() {
 	return (
 		<div className="App">
 			<Nav />
+			<Form handleAddHog={handleAddHog} />
 			<SortAndFilter handleFilter={handleFilter} handleSort={handleSort} />
 			<HogContainer hogs={displayHogs} handleShowDetails={handleShowDetails} />
 			<HogModal hogDetails={hogDetails} modalVisible={modalVisible} handleCloseModal={handleCloseModal} />
